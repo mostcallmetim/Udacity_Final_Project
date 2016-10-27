@@ -63,7 +63,7 @@ var education = {
         "title": "Intro to Programming",
         "school": "Udacity",
         "dates": "2016",
-        "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+        "url": "www.udacity.com"
     }]
 };
 
@@ -87,11 +87,11 @@ education.display = function () {
     }
 
 
-    for (var i2 = 0; i < education.onlineCourses.length; i++) {
-        var formattedonlineTitle = HTMLonlineTitle.replace(data, education.onlineCourses[online].title);
-        var formattedonlineSchool = HTMLonlineSchool.replace(data, education.onlineCourses[online].school);
-        var formattedonlineDates = HTMLonlineDates.replace(data, education.onlineCourses[online].dates);
-        var formattedonlineURL = HTMLonlineURL.replace(data, education.onlineCourses[online].url);
+    for (var o = 0; o < education.onlineCourses.length; o++) {
+        var formattedonlineTitle = HTMLonlineTitle.replace(data, education.onlineCourses[o].title);
+        var formattedonlineSchool = HTMLonlineSchool.replace(data, education.onlineCourses[o].school);
+        var formattedonlineDates = HTMLonlineDates.replace(data, education.onlineCourses[o].dates);
+        var formattedonlineURL = HTMLonlineURL.replace(data, education.onlineCourses[o].url);
 
         $(".education-entry.last").append(HTMLonlineClasses);
         $(".education-entry:last").append(formattedonlineTitle + formattedonlineSchool);
@@ -155,6 +155,7 @@ var projects = {
         "images": ["images/Photo1.jpg"],
     }]
 };
+
 project.display = function () {
     for (var i2 = 0; i2 < work.jobs.length; i2++) {
 
@@ -164,10 +165,9 @@ project.display = function () {
         var formattedprojectDate = HTMLprojectDate.replace(data, projects.projects[i2].dates);
         var formattedprojectDescription = HTMLprojectDescription.replace(data, projects.projects[i2].description);
 
-        var image = "project";
 
-        for (image in projects.projects[i2].images) {
-            var formattedprojectImage = HTMLprojectImage.replace(data, projects.projects[i2].images[image]);
+        for (var m = 0; m < projects.projects[i2].images.length; m++) {
+            var formattedprojectImage = HTMLprojectImage.replace(data, projects.projects[i2].images[m]);
             $(".project-entry:last").append(formattedprojectTitle);
             $(".project-entry:last").append(formattedprojectDate);
             $(".project-entry:last").append(formattedprojectImage);
